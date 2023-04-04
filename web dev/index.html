@@ -4,66 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Payment form</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="header" class="">  <!--class is to uniquely identify grp of ele, id is to uniquely identify each ele of grp-->
-
-    </div>
-    <div id="banner" style="display: flex;">
-        <div id="left" style="width: 50%;  display:flex; justify-content: center; align-items: center;" >
-            <div>
-                <img src="https://flxt.tmsimg.com/assets/p19149543_b_v9_aa.jpg" style="height: 300px;" alt="">
-            </div>
-        </div>
+    <div class="container">
+    <form action="">
+        <h1 class="main_heading">Payment form </h1>
+        <!--<p>Required fields are followed by *</p> u can write this and give *  after every compulsory field to let the use know.-->
+        <hr>
+        <h2>Contact information</h2>
+        <p>Name *  
+            <input type="text" name="name" required placeholder="enter your name"> </p>   <!--name attribut is must in input element for info to reach server-->
+        </p>
+        <p>
+            <fieldset>
+                <legend>Gender *</legend>
+                Male <input type="radio" name="gender" id="male" required>      <!--name attribute value is unique but under radio type the options provided by u to user must have same name so that they can select only one option-->
+                Female <input type="radio" name="gender" id="female" required>
+            </fieldset>
+        </p>    
+        <p> Address:</p>
+            <textarea name="address" id="address" cols="90" rows="7" placeholder="enter your address"></textarea>
         
-        <div id="right" style="width: 50%; text-align: center;">
-            <h1 style="font-size: xx-large;
-            font-weight: bolder;
-            font-family: papyrus;">ATTACK ON TITAN</h1>
-            <p style="font-size: large; 
-            font-style: italic;
-            font-weight: lighter;
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"></p>After his hometown is destroyed and his mother is killed, young Eren Jaeger vows to cleanse the earth of the giant humanoid 
-                Titans that have brought humanity to the brink of extinction. 
-                Humans are nearly exterminated by giant creatures called Titans</p>
-        
-            <button style=" 
-            background-color: rgb(33, 4, 20); 
-            color: bisque; 
-            border: none; 
-            font-size: x-large;
-            padding: 20px 20px;
-            border-radius: 15px;" >
-                Explore more
-            </button>
-                
-        </div>
-            
+        <p>Email * 
+            <input type="email" name="email" id="email" required>
+        </p>
+        <p>Pincode *
+            <input type="number" name="pincode" id="pincode" required>
+        </p>
+        <h2>Payment information</h2>
+        <p>Card type *
+            <select name="card_type" id="card_type" required>
+                <option value="">--Select a Card type--</option>   <!-- first option value must always be left empty in dropdown menu-->
+                <option value="visa">Visa</option>
+                <option value="rupay">Rupay</option>
+                <option value="mastercard">Mastercard</option>
+            </select>
+        </p>
+        <p>
+            Card number: * <input type="number" name="card_num" id="card_num" required placeholder="1111-2222-3333-4444">
+        </p>
+        <p>
+            Expiry date: * <input type="date" name="expiry" id="expiry" required>
+        </p>
+        <p>
+            CVV: * <input type="password" name="cvv" id="cvv" required>
+        </p>
+            <input type="submit" value="Pay now">
+    </form>
     </div>
-    <div id="services">
-        <div id="heading" style="text-align: center; background-color: bisque;">
-            <h1>Our Services</h1>
-        </div>
-        <div id="Image container" style="display: flex; place-content: space-evenly;">
-            <div>
-                <img src="https://www.sideshow.com/wp/wp-content/uploads/2022/02/eren-yeager-season-1.jpeg" height="100px" alt="EREN" height="100px">
-            </div>
-            <div>
-                <img src="https://www.sideshow.com/wp/wp-content/uploads/2022/02/eren-yeager-season-1.jpeg" height="100px" alt=""> 
-            </div>
-            <div>
-                <img src="https://www.sideshow.com/wp/wp-content/uploads/2022/02/eren-yeager-season-1.jpeg" height="100px" alt="">
-            </div>
-        </div>
-
-    </div>
+    <!-- after filling this form we get entire info in url with our data against values this is bcas form method is "get" but if its
+    sensitive information u can use method "post"-->
+   
 </body>
 </html>
-
-<!--if elememts are in flex mode
-align-items - to change allignment VERTICALLY
-justify-content - to chnage alignment HORIZONTALLY
-
-position:absolute, top=50% , left=50%
-transform:translate(-50%,-50%)   {transform is applied to the element}-->
