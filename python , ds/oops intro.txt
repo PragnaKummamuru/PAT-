@@ -1,0 +1,116 @@
+6/11/2022										OOPS AND ARRAYS
+
+#Any language is said to Object Oriented Prog. lang (OOP) if it has :
+	1. Objects
+	2. Classes
+	3. 4 Principles - Abstraction,Encapsulation,Inheritence,Polymorphism
+
+#The first OOP language is - Simula
+
+#The first purely/truly OOP language -  Smalltalk
+
+#Define CLASS - Blueprint for an Object
+
+#Define OBJECT - Instance of the Class 
+
+#ITERABLE  - Set of values (eg: classs is an iterable of students)
+#ITERATOR - It goes through an Iterable. 
+
+#ARRAY SYNTAX :
+	type arrayname[]= new type[size];
+
+								PROGRAM 1 :
+class IAREStudent {int id;String name,branch; }
+public class Main
+{
+    
+	public static void main(String[] args) {
+		IAREStudent stud1 = new IAREStudent();
+		stud1.id=1;
+		stud1.name="Sri";
+		stud1.branch="XYZ";
+		System.out.println("Student 1 details:");
+		System.out.println("ID: " +stud1.id);
+		System.out.println("Name: " +stud1.name);
+		System.out.println("Branch: " +stud1.branch);
+		IAREStudent stud2 = new IAREStudent();
+		stud2.id=2;
+		stud2.name="likki";
+		stud2.branch="DS";
+		System.out.println("Student 2 details:");
+		System.out.println("ID: " +stud2.id);
+		System.out.println("Name: " +stud2.name);
+		System.out.println("Branch: " +stud2.branch);
+	
+	}
+}
+
+							PROGRAM 2
+public class Main
+{
+    
+	public static void main(String[] args) {
+	    int arr[]=new int[]{21,14,9,16,31,22,7,29};
+	    for(int i : arr){              //for(int i=0;i<arr.length;i++)                                                                              output: 21 14 9 16 31 22 7 29
+	        System.out.print(i+" ");
+	    }
+	}
+}
+
+
+							PROGRAM 3
+import java.util.*;
+public class Main
+{
+    
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int n = sc.nextInt();
+	    int arr[]= new int[n];
+	    for(int i=0;i<n;i++){
+	        arr[i]=sc.nextInt();
+	    }
+	    for(int i:arr){
+	        System.out.print(i+" ");
+	    }
+            }
+}
+
+
+							PROGRAM 4 (PRIME CHECK) -- TIME COMPLEXITY = O(sqrt(n)/2)
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    static boolean primeCheck(long n){
+            if (n<=1){
+                return false;
+            }
+            if(n!=2 && n%2==0) {
+                return false;
+            }
+            for(int i=3;i<=Math.sqrt(n);i+=2){
+                if (n%i==0){
+                    return false;
+                }
+            }
+            return true;
+    }
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        long arr[]= new long[n];
+        for(int i=n-1;i>=0;i--){
+            arr[i]= sc.nextLong();
+            }
+        for(long i : arr){
+            if(primeCheck(i)){
+                System.out.print(i+" ");
+            }
+            
+            
+        }
+    }
+}

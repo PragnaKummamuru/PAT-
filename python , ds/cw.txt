@@ -1,0 +1,111 @@
+21/2/23
+class , object , method , private 
+
+GETTERS AND SETTERS  --- eg : when u login into any side using with google acc ,,the site shld get email,pw from google and then set it
+ex: updating the pw (SAMPLE2 in ET )
+
+
+CLASS - collection of properties (Encapsulation)
+to encapsulate properties - CLASS
+to encapsulate claess - PACKAGE
+
+CONSTRUCTOR
+-Constructor is the method which is executed when an object is created by default (we need not call it using object like other methods
+it is called automatically by compiler)
+rules:
+1.Name of constructor is same as that of class
+2.It shld not have any return type
+3.We can have any no.of constructors depending on the way we create objects(i.e., no of objects)
+
+-there are 2 types of constructors :
+1.default(non-arguement) 2.parametarized
+
+
+EXCEPTION HANDLING -- try,catch ,finally
+--for 1 try we can have n catch() and 1 finally
+--advisable to use max 3 levels in nested try 
+
+*it is not possible to return multiple values from a funtion in java
+however we can do that by using "yield" method in python.
+
+*method - whenever we create an object from a class and access all the functions with in that cls its called a method
+*function - set of instructions to perform a certain taskk
+though functionality of method and function is same...definition varies
+
+### IRRESPECTIVE OF SCOPE WHEN WE USE "this.varibale_name"  it will directly access the class variables i.e., gobal scope variables
+        (ignoring local scope even if present)
+
+28/2/2023
+-TYPES OF INHERITENCE:
+	simple , multilevel, hierarchial , multiple
+	hybrid - combo of any 2 inheritences mentioned above -- not possible directly due to "diamond prblm"-it occurs when we try to access same method present in diff classes 
+ 
+-Arraylist : .add(value)	.remove(index)		.get(index)
+**Arraylist will hold the objects of a class so when u want to store integer we type:
+	ArrayList<Integer> a= new ArrayList<Integer> ();    -------- here Integer is the CLASS not DATATYPE
+LMS
+
+Polymorphism - same method acts differently in diff scenaiors (classes)
+type1 : METHOD OVERLOADING - complile time polymorphism - same class with same method name but difference in signature(means no.of paramaters and return type of functin)
+type2 : METHOD OVERRIDING - run time polymorphism - same method in 2 diff classes
+
+
+DIFF BW INTERFACE AND ABSTRACTION(hiding functionality from end user) :
+ABSTRACTION - can create both static ,non static and final, non final variables
+			it can have both abstract and normal methods
+INTERFACE - all variables are by default static, public and final
+ SIMILARITIES:
+-objects cant be created directly , in both  we only DECLARE VARIABLES BUT WONT DEFINE IT
+
+
+- throw and throws keyword:
+// throw - it is used when the USER wants to define any exception to occur (eg: to restrict the age shld be less that 18)
+//throws - user expects that the method can raise an exception under certain circnumstancess . (eg: IOException)
+
+
+
+14/03/2023							DATA STRUCTURES USING JAVA
+
+STACK - 
+Methods of stack -------------1. push		2.pop		3.peek		4.isEmpty(or we can use if top=-1 --stack is empty)     
+Conditions of stack-----------1.overflow(pushing into a filled stack)	2.underflow(trying to pop from an empty stack)	
+
+QUEUE -
+Implement stack using 2 queues
+
+LINKED LIST - 
+here data is scattered across the RAM to link them we use linked list 
+-From a memory allocation point of view, linked lists are more efficient than arrays. Unlike arrays, the size for a linked list is not pre-defined, 
+  allowing the linked list to increase or decrease in size as the program runs
+
+DOUBLE LINKED LIST - 
+
+
+Q ----------- REVERSE AN ARRAY OF INTEGERS IN GROUPS OF GIVEN SIZE K (EX:ip-1,2,3,4,5,6,7,8 and k=3 then op-3,2,1,6,5,4,8,7)
+	public class ReverseArrayInGroups {
+		public static void reverse(int arr, int k) {
+		int len=arr.length;
+		for(int i = 0; i < len; i = i+k) {
+			int start=i;
+			int end= Math.min(i+k-1, len-1); // to ensure that if i is not multiple of k i.e.,when i+k exceeds array length we reverse last elements(7,8 in above ex)
+			while(start <= end) {
+				int temp = arr[start];
+				arr[start] = arr[end];
+				arr[end] = temp;
+				start++;
+				end--;
+			}
+		}
+	}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+21/03/2002								OOPS concept in PYTHON
+
+-inside a class : "def__int__(self)" is similar to constructor in java i.e., it is called when an object is created for that class.
+-insside a method if u write "self.variablename" it automatically becomes class variable even if it's not defined
+-encapsulation
+-inheritance --- no "extends" keyword like java...just use class b(a)
+-polymorphism
+-abstraction - no "abstarct" keyword as in java , here we have ABC class in abc(abstarct base class) package and also to create abstract method we use "@abstarctmethod" annotation
+
+
